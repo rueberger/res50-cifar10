@@ -1,0 +1,24 @@
+version: '3.4'
+
+# NOTE: this is configured specifically for where I will be deploying
+# you should set the data path and network for your circumstances
+
+services:
+  reslab:
+    build:
+      context: .
+    image: 'rueberger/reslab'
+    volumes:
+      - 'data:/data'
+    networks:
+      - bh_services_core
+
+
+# bh_services_core is a network already running on the host I will use
+# importantly, there is a mongodb instance on it available at 'mongo'
+networks:
+  bh_services_core:
+    external: true
+
+volumes:
+  data:
