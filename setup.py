@@ -14,5 +14,6 @@ setup(name='reslab',
           'sacred',
           'matplotlib',
           'pymongo',
-          'jupyterlab'
+          'jupyterlab',
+          'requests'
       ])
