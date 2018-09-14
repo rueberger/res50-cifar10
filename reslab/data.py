@@ -1,11 +1,14 @@
 """ Module for data fetch and batch gen
 """
 
+import os
+
 import tensorflow as tf
 
 from reslab.constants import DATA_PATH, DATA_URL
 
 def pull_data():
+    os.makedirs(DATA_PATH, exist=ok=True)
     tf.keras.utils.get_file(DATA_PATH, DATA_URL, untar=True)
 
 
