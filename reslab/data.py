@@ -1,15 +1,24 @@
 """ Module for data fetch and batch gen
 """
 
-import os
+import tarfile
+
+import requests
 
 import tensorflow as tf
 
 from reslab.constants import DATA_PATH, DATA_URL
 
 def pull_data():
-    os.makedirs(DATA_PATH, exist_ok=True)
-    tf.keras.utils.get_file(DATA_PATH, DATA_URL, untar=True)
+    response = requests.get(DATA_URL)
+    tar_path = '{}.tar.gz'.format(DATA_PATH)
+    with open(tar_path, 'wb') as file_handle:
+        file_handle.write(response.contents)
+
+    with tarfile.open(tar_path, 'r:gz') as file_handle:
+        file_handle.extractall()
+
+
 
 
 def get_input_fn(filenames, batch_size, num_epochs, shuffle=False, augment=False):
