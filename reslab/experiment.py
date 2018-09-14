@@ -30,11 +30,11 @@ def cfg():
     batch_size = 256
     batch_norm = True
     layers = [16, 16, 32, 64]
+    lr_values = [1e-1, 1e-2, 1e-3]
+    lr_boundaries = [max_steps_train // 3, max_steps_train // 3 * 2]
     l2_scale = 0.1
-    lr_values = [1e-1, 1e-2, 1e-3],
-    lr_boundaries = [max_steps_train // 3, max_steps_train // 3 * 2],
-    bn_momentum = 0.99,
-    momentum = 0.9,
+    bn_momentum = 0.99
+    momentum = 0.9
 
 # LogFileWriter captures tensorboard logs
 @reslab_exp.main
