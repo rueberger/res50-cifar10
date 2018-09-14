@@ -10,7 +10,7 @@ setup(name='reslab',
       url='https://github.com/rueberger/res50-cifar10',
       packages=['reslab'],
       install_requires=[
-          'tensorflow',
+          'tensorflow-gpu',
           'sacred',
           'matplotlib',
           'pymongo',
