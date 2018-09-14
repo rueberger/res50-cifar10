@@ -12,6 +12,6 @@ setup(name='reslab',
       install_requires=[
           'tensorflow',
           'sacred',
-          'matplotlib'
+          'matplotlib',
           'pymongo'
       ])
