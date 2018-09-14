@@ -10,7 +10,7 @@ from sacred import Experiment
 from sacred.stflow import LogFileWriter
 from sacred.observers import MongoObserver
 
-from reslab.constants import DATA_DIR
+from reslab.constants import DATA_PATH
 from reslab.model import model_fn
 from reslab.data import get_input_fn
 
@@ -60,10 +60,10 @@ def main(_config):
         params=params)
 
     filenames_train = [
-        os.path.join(DATA_DIR, 'data_batch_{}.bin'.format(i))
+        os.path.join(DATA_PATH, 'data_batch_{}.bin'.format(i))
         for i in range(1, 6)
     ]
-    filenames_eval = [os.path.join(DATA_DIR, 'test_batch.bin')]
+    filenames_eval = [os.path.join(DATA_PATH, 'test_batch.bin')]
 
     input_fn_train = get_input_fn(
         filenames=filenames_train,
