@@ -13,7 +13,7 @@ def pull_data():
     response = requests.get(DATA_URL)
     tar_path = '{}.tar.gz'.format(DATA_PATH)
     with open(tar_path, 'wb') as file_handle:
-        file_handle.write(response.contents)
+        file_handle.write(response.content)
 
     with tarfile.open(tar_path, 'r:gz') as file_handle:
         file_handle.extractall()
