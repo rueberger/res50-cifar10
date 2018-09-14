@@ -13,4 +13,5 @@ setup(name='reslab',
           'tensorflow',
           'sacred',
           'matplotlib'
+          'pymongo'
       ])
