@@ -12,6 +12,8 @@ services:
       - 'data:/data'
     networks:
       - bh_services_core
+    ports:
+      - "172.30.116.35:9999:8888"
 
 
 # bh_services_core is a network already running on the host I will use
